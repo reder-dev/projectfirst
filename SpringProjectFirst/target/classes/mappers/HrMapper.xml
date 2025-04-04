@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hr.mapper.HrMapper">
+
+	<select id="getTime" resultType="String">
+		select now();
+		
+	</select>
+
+
+	<!-- 인사 정보 조회 -->
+	
+	<select id ="getHrInfo" resultType="com.hr.useing.HrVO">
+		select * from tbl_EMPLOYEE
+		where emp_id = #{emp_id}
+	</select>
+	
+	<!-- 인사 정보 조회 -->
+	
+	<!-- 인사정보 수정 -->
+	<update id="updateHr">
+		update tbl_EMPLOYEE set emp_id=#{emp_id},
+		emp_modifydate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+		where emp_id=#{emp_id} and emp_pw=#{emp_pw}
+		
+		
+	</update>
+
+	<!-- 인사정보 수정 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
